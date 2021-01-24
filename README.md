@@ -1,3 +1,3 @@
-### migrants project 
+### Migrants Project 
 
-## See migrants-app
+## See frontend and backend projects
