@@ -1,9 +1,12 @@
 import React from 'react';
+import GeneralData from './forms/GeneralInfo';
+import Header from './Header';
 
 const App = () => {
     return (
-        <div>
-            Migrants
+        <div className="ui segment">
+            <Header/>
+            <GeneralData/>
         </div>
     );
 }
