@@ -1,6 +1,10 @@
 import React from 'react';
 
 const GeneralData = () => {
+  const [name, setName] = React.useState('');
+  const [lastname, setLastname] = React.useState('');
+  const [gender, setGender] = React.useState('');
+
     return (
         <div className="ui segment">
             <form class="ui form">
@@ -9,10 +13,10 @@ const GeneralData = () => {
     <label>Nombre completo</label>
     <div class="two fields">
       <div class="field">
-        <input type="text" name="nombre" placeholder="Nombre"/>
+        <input type="text" name="nombre" value={name} onChange={(e) => setName(e.target.value)}/>
       </div>
       <div class="field">
-        <input type="text" name="apellido" placeholder="Apellido"/>
+        <input type="text" name="apellido" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
       </div>
     </div>
   </div>
@@ -20,13 +24,13 @@ const GeneralData = () => {
     <label for="gender">Genero: </label>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="gender" checked="true" tabindex="0" class="hidden"/>
+        <input type="radio" value="M" checked={gender === 'M'? true : false} onChange={(e) => setGender('M')} tabIndex="0" />
         <label>Masculino</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="gender" tabindex="1" class="hidden"/>
+        <input type="radio" value="F" checked={gender === 'F'? true : false} onChange={(e) => setGender('F')} tabIndex="1" />
         <label>Femenino</label>
       </div>
     </div>
