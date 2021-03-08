@@ -1,9 +1,7 @@
 import React from 'react';
 
 const GeneralData = () => {
-  const [name, setName] = React.useState('');
-  const [lastname, setLastname] = React.useState('');
-  const [gender, setGender] = React.useState('');
+  const [data, setData] = React.useState({});
 
     return (
         <div className="ui segment">
@@ -13,10 +11,10 @@ const GeneralData = () => {
     <label>Nombre completo</label>
     <div class="two fields">
       <div class="field">
-        <input type="text" name="nombre" value={name} onChange={(e) => setName(e.target.value)}/>
+        <input type="text" name="nombre" value={data.name || ''} onChange={(e) => setData({...data, name: e.target.value})}/>
       </div>
       <div class="field">
-        <input type="text" name="apellido" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
+        <input type="text" name="apellido" value={data.lastname || ''} onChange={(e) => setData({...data, lastname: e.target.value})}/>
       </div>
     </div>
   </div>
@@ -24,13 +22,13 @@ const GeneralData = () => {
     <label for="gender">Genero: </label>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" value="M" checked={gender === 'M'? true : false} onChange={(e) => setGender('M')} tabIndex="0" />
+        <input type="radio" value="M" checked={data.gender === 'M'? true : false} onChange={(e) => setData({...data, gender: 'M'})} tabIndex="0" />
         <label>Masculino</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" value="F" checked={gender === 'F'? true : false} onChange={(e) => setGender('F')} tabIndex="1" />
+        <input type="radio" value="F" checked={data.gender === 'F'? true : false} onChange={(e) => setData({...data, gender: 'F'})} tabIndex="1" />
         <label>Femenino</label>
       </div>
     </div>
