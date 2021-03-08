@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const GeneralData = () => {
-  const [data, setData] = React.useState({});
+  const [data, setData] = useState({});
 
     return (
         <div className="ui segment">
